@@ -1,0 +1,11 @@
+{
+  "name": "todo-backend-mock",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "server": "npx json-server db.json --port 3000"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-alpha.23"
+  }
+}

@@ -1,0 +1,14 @@
+{
+"todos": [
+    {
+        "id": "1",
+        "title": "Configurar la estructura híbrida",
+        "completed": true
+    },
+    {
+        "id": "2",
+        "title": "Sincronizar sessionStorage con los filtros del DOM",
+        "completed": false
+    }
+]
+}
