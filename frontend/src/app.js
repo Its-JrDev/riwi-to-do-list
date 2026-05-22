@@ -4,11 +4,11 @@ import {
   guardarFiltro, obtenerFiltro,
   guardarBusqueda, obtenerBusqueda
 } from "./storage.js";
+import { getTodos, addTodo, toggleTodoStatus, deleteTodo } from "../../backend/src/api.js";
 
 
 
 let tareas = [];
-let contadorId = 1;
 
 const inputTarea = document.getElementById("input-tarea");
 const btnAgregar = document.getElementById("btn-agregar");
@@ -37,13 +37,7 @@ async function initApp() {
   buscador.value = obtenerBusqueda();
 
   try {
-    
-    tareas = [
-      { id: "1", title: "Configurar la estructura híbrida", completed: true },
-      { id: "2", title: "Sincronizar sessionStorage con los filtros del DOM", completed: false }
-    ];
-    contadorId = tareas.length + 1;
-
+    tareas = await getTodos();
     refrescarVista();
 
   } catch (err) {
@@ -62,8 +56,8 @@ btnAgregar.addEventListener("click", async () => {
   if (!titulo) return;
 
   try {
-    
-    tareas.push({ id: String(contadorId++), title: titulo, completed: false });
+    const nuevaTarea = await addTodo(titulo);
+    tareas.push(nuevaTarea);
     inputTarea.value = "";
     refrescarVista();
   } catch (err) {
@@ -99,9 +93,9 @@ btnTema.addEventListener("click", () => {
 
 async function onToggle(id, completadaActual) {
   try {
-    
-    const tarea = tareas.find((t) => t.id === id);
-    if (tarea) tarea.completed = !completadaActual;
+    const tareaActualizada = await toggleTodoStatus(id, completadaActual);
+    const index = tareas.findIndex((t) => t.id === id);
+    if (index !== -1) tareas[index] = tareaActualizada;
     refrescarVista();
   } catch (err) {
     console.error("Error al actualizar:", err.message);
@@ -110,7 +104,7 @@ async function onToggle(id, completadaActual) {
 
 async function onEliminar(id) {
   try {
-    
+    await deleteTodo(id);
     tareas = tareas.filter((t) => t.id !== id);
     refrescarVista();
   } catch (err) {

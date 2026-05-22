@@ -1,14 +1,15 @@
 {
-"todos": [
+  "todos": [
     {
-        "id": "1",
-        "title": "Configurar la estructura híbrida",
-        "completed": true
+      "id": "1",
+      "title": "Configurar la estructura híbrida",
+      "completed": true
     },
     {
-        "id": "2",
-        "title": "Sincronizar sessionStorage con los filtros del DOM",
-        "completed": false
+      "id": "2",
+      "title": "Sincronizar sessionStorage con los filtros del DOM",
+      "completed": false
     }
-]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
