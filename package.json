@@ -1,0 +1,17 @@
+{
+  "name": "riwi-to-do-list",
+  "private": true,
+  "scripts": {
+    "install": "npm run install:backend && npm run install:frontend",
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && npm install",
+    "start:frontend": "cd frontend && npm run dev",
+    "start:backend": "cd backend && npm run server",
+    "start:all": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start": "npm run start:all",
+    "dev": "npm run start:all"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

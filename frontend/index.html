@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis Tareas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1> Mis Tareas</h1>
+      <button id="btn-tema"></button>
+    </header>
+
+    <div class="form-agregar">
+      <input type="text" id="input-tarea" placeholder="Nueva tarea..." />
+      <button id="btn-agregar">Agregar</button>
+    </div>
+
+    <input type="text" id="buscador" placeholder=" Buscar tarea..." />
+
+    <div class="filtros">
+      <button class="btn-filtro activo" data-filtro="todas">Todas</button>
+      <button class="btn-filtro" data-filtro="pendientes">Pendientes</button>
+      <button class="btn-filtro" data-filtro="completadas">Completadas</button>
+    </div>
+
+    <ul id="lista-tareas"></ul>
+
+  </div>
+
+  <script type="module" src="src/app.js"></script>
+
+</body>
+</html> 

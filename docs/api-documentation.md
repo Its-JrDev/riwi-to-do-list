@@ -22,7 +22,7 @@ Asegúrate de tener instalado [Node.js](https://nodejs.org).
    ```bash
    npm run server
    ```
-   *La API estará disponible y escuchando en:* `http://localhost:3000/todos`
+   *La API estará disponible y escuchando en:* `http://localhost:3001/todos`
 
 ### Esquema de la Base de Datos (`db.json`)
 La base de datos mock se inicializa con el siguiente plano estructural básico:
@@ -50,10 +50,10 @@ La base de datos mock se inicializa con el siguiente plano estructural básico:
 Para desacoplar las URLs del servidor de los scripts del cliente y asegurar un código limpio, el sistema depende de configuraciones de entorno. Según la arquitectura final elegida por el Desarrollador B, selecciona una de estas opciones:
 
 * **Configuración con Vite (Recomendada):**
-  * Variable en archivo `.env`: `VITE_API_URL=http://localhost:3000/todos`
+  * Variable en archivo `.env`: `VITE_API_URL=http://localhost:3001/todos`
   * Acceso en código: `import.meta.env.VITE_API_URL`
 * **Configuración con JavaScript Nativo/Vanilla:**
-  * Declaración directa al inicio del módulo: `const API_URL = 'http://localhost:3000/todos';`
+  * Declaración directa al inicio del módulo: `const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/todos';`
 
 ---
 

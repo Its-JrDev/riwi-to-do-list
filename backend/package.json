@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "server": "npx json-server db.json --port 3000"
+    "server": "npx json-server db.json --port 3001"
   },
   "dependencies": {
     "json-server": "^1.0.0-alpha.23"
