@@ -31,7 +31,9 @@ async function initApp() {
   
   const temaGuardado = obtenerTema();
   aplicarTema(temaGuardado);
-  btnTema.textContent = temaGuardado === "dark" ? "☀️" : "🌙";
+  btnTema.innerHTML = temaGuardado === "dark"
+    ? '<span class="material-symbols-outlined">light_mode</span>'
+    : '<span class="material-symbols-outlined">dark_mode</span>';
 
   
   buscador.value = obtenerBusqueda();
@@ -43,7 +45,7 @@ async function initApp() {
   } catch (err) {
     console.error("Error al cargar:", err.message);
     document.getElementById("lista-tareas").innerHTML =
-      '<li class="sin-tareas">⚠️ Error al cargar las tareas</li>';
+      '<li class="sin-tareas"><span class="material-symbols-outlined">warning</span> Error al cargar las tareas</li>';
   }
 }
 
@@ -86,7 +88,9 @@ btnTema.addEventListener("click", () => {
   const nuevo  = actual === "light" ? "dark" : "light";
   guardarTema(nuevo);
   aplicarTema(nuevo);
-  btnTema.textContent = nuevo === "dark" ? "☀️" : "🌙";
+  btnTema.innerHTML = nuevo === "dark"
+    ? '<span class="material-symbols-outlined">light_mode</span>'
+    : '<span class="material-symbols-outlined">dark_mode</span>';
 });
 
 

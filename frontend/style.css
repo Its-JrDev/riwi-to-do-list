@@ -165,4 +165,13 @@ input[type="text"]:focus { border-color: var(--primario); }
   text-align: center;
   color: var(--texto-suave);
   padding: 32px 0;
+}
+
+.material-symbols-outlined {
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+body.dark-theme .material-symbols-outlined {
+  color: #fff;
 } 

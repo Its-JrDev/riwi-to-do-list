@@ -5,7 +5,7 @@ export function renderTareas(tareas, onToggle, onEliminar) {
   lista.innerHTML = "";
 
   if (tareas.length === 0) {
-    lista.innerHTML = '<li class="sin-tareas">No hay tareas 😴</li>';
+    lista.innerHTML = '<li class="sin-tareas"><span class="material-symbols-outlined">sentiment_neutral</span> No hay tareas</li>';
     return;
   }
 
@@ -20,7 +20,7 @@ export function renderTareas(tareas, onToggle, onEliminar) {
     li.innerHTML = `
       <input type="checkbox" ${tarea.completed ? "checked" : ""} />
       <span>${tarea.title}</span>
-      <button class="btn-eliminar">🗑️</button>
+      <button class="btn-eliminar"><span class="material-symbols-outlined">delete_outline</span></button>
     `;
 
     li.querySelector("input").addEventListener("change", () => {
