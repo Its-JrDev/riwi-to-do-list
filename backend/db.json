@@ -1,9 +1,45 @@
 {
   "todos": [
     {
-      "title": ",mbvkh",
+      "title": "nominas",
       "completed": false,
-      "id": "KnJdLKm7PPM"
+      "id": "LzGSAQvmzPE"
+    },
+    {
+      "title": "compromisos de la empresa y los del equipo de las TI",
+      "completed": false,
+      "id": "MVfDwXnWTEc"
+    }
+    ,
+    {
+      "title": "revisión de seguridad API",
+      "completed": false,
+      "id": "aB3dE5fGhIj"
+    },
+    {
+      "title": "deploy a staging",
+      "completed": true,
+      "id": "K9LmN8oPqRs"
+    },
+    {
+      "title": "escribir documentación frontend",
+      "completed": false,
+      "id": "T7uVwXyZa12"
+    },
+    {
+      "title": "reunión con cliente",
+      "completed": false,
+      "id": "Q3rS4tU5vWx"
+    },
+    {
+      "title": "backups diarios configurados",
+      "completed": true,
+      "id": "Z0yXwVuTsRq"
+    },
+    {
+      "title": "optimizar consulta de tareas",
+      "completed": false,
+      "id": "M6nB7vC8xYz"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
